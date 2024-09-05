@@ -1,7 +1,14 @@
 import allure
+from allure_commons.types import Severity
 from selene import browser, have, be
 
 
+@allure.tag('WEB')
+@allure.severity(Severity.NORMAL)
+@allure.label('owner', 'k.panfilova')
+@allure.feature('Issues in a repository')
+@allure.story('Visibility of created issues')
+@allure.link('https://github.com', name='Testing site')
 def test_github_issue():
     open_main_page()
     look_for_repo('KseniaPanfilova/QA_GURU_HW_8')

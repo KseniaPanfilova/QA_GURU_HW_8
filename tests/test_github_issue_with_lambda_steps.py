@@ -1,8 +1,16 @@
 import allure
+from allure_commons.types import Severity
 from selene import browser, have, be
 
 
 def test_github_issue():
+    allure.dynamic.tag('WEB')
+    allure.dynamic.severity(Severity.NORMAL)
+    allure.dynamic.feature('Issues in a repository')
+    allure.dynamic.story('Visibility of created issues')
+    allure.dynamic.link('https://github.com', name='Testing site')
+    allure.dynamic.label('owner', 'k.panfilova')
+
     with allure.step('Open GitHub main page'):
         browser.open('https://github.com')
 
